@@ -1,0 +1,145 @@
+/* ==========================================================================
+   Design 1 · Modern Minimal — dark theme
+   Slate surfaces stepped by lightness (canvas < surface < surface-2), a brighter blue for action,
+   desaturated status tints. Activated by <html data-theme="dark">.
+   ========================================================================== */
+
+[data-theme="dark"] {
+  color-scheme: dark;
+  --primary: #3b82f6; --primary-hover: #5b95f8; --primary-active: #2563eb; --primary-700: #9cbcff; --primary-50: #172440;
+  --ink: #e8ecf4;
+  --canvas: #0b0f17; --surface: #121826; --surface-2: #1a2232;
+  --border: #252f42; --border-strong: #354157;
+  --text: #e8ecf4; --text-2: #aeb8c9; --text-3: #8794a9;
+  --success: #4fd18b; --danger: #f97066; --danger-50: #2b1517;
+  --sh-xs: 0 1px 2px rgba(0, 0, 0, .45);
+  --sh-sm: 0 1px 3px rgba(0, 0, 0, .5), 0 1px 2px rgba(0, 0, 0, .3);
+  --sh-md: 0 10px 24px -8px rgba(0, 0, 0, .6), 0 2px 4px -2px rgba(0, 0, 0, .3);
+  --sh-lg: 0 24px 48px -12px rgba(0, 0, 0, .7);
+  --sh-xl: 0 32px 64px -16px rgba(0, 0, 0, .8);
+  --focus-ring: 0 0 0 4px rgba(59, 130, 246, .35);
+}
+[data-theme="dark"] ::selection { background: #2b4a85; }
+
+/* ---------- Components ---------- */
+[data-theme="dark"] .btn-secondary:hover { border-color: #4a5670; }
+[data-theme="dark"] .btn-danger { --btn-bd: #5c2a2a; }
+[data-theme="dark"] .btn-dark { --btn-bg: #e8ecf4; --btn-fg: #0b0f17; --btn-bd: #e8ecf4; --btn-bg-h: #ffffff; }
+[data-theme="dark"] .input::placeholder { color: #66738a; }
+[data-theme="dark"] .input:hover, [data-theme="dark"] .date-input:hover, [data-theme="dark"] .chip:hover, [data-theme="dark"] .filter-btn:hover { border-color: #4a5670; }
+[data-theme="dark"] .field.is-invalid .input, [data-theme="dark"] .autocomplete.is-invalid .autocomplete-input { border-color: #b4483f; box-shadow: 0 0 0 4px rgba(249, 112, 102, .18); }
+[data-theme="dark"] .field.is-valid .input { border-color: #2f7d55; }
+[data-theme="dark"] .check-box { border-color: #4a5670; background: var(--surface); }
+[data-theme="dark"] .check input[type="radio"]:checked + .check-box { background: var(--surface); }
+[data-theme="dark"] .switch-track { background: #3a4558; }
+[data-theme="dark"] .range::-webkit-slider-thumb { background: var(--surface); }
+[data-theme="dark"] .range::-moz-range-thumb { background: var(--surface); }
+[data-theme="dark"] .dp-day:disabled { color: #3f4a5e; }
+[data-theme="dark"] .autocomplete-item:hover .icon, [data-theme="dark"] .autocomplete-item.is-active .icon { background: var(--surface); }
+[data-theme="dark"] .rc-tooltip { background: #e8ecf4; color: #0b0f17; }
+[data-theme="dark"] .toast-warning .toast-icon, [data-theme="dark"] .alert-warning .icon { color: #fdb022; }
+
+[data-theme="dark"] .badge-info { background: #15233f; color: #9cbcff; border-color: #22396a; }
+[data-theme="dark"] .badge-brand { background: #211b3f; color: #bdb4fe; border-color: #362d6b; }
+[data-theme="dark"] .badge-success { background: #0f2a1d; color: #6ce9a6; border-color: #1b4a33; }
+[data-theme="dark"] .badge-warning { background: #2e1f08; color: #fdb022; border-color: #4f3510; }
+[data-theme="dark"] .badge-danger { background: #2e1415; color: #fda29b; border-color: #552325; }
+[data-theme="dark"] .badge-neutral { background: #1f2738; color: #b4bdcc; border-color: #2f394d; }
+[data-theme="dark"] .badge-new { border-color: #22396a; }
+[data-theme="dark"] .avail-limited { color: #fdb022; }
+[data-theme="dark"] .stars .icon.is-half { fill: #7a5a1c; }
+
+[data-theme="dark"] .plate { background: var(--surface-2); border-color: #4a5670; }
+[data-theme="dark"] .plate-cc { background: #2563eb; }
+[data-theme="dark"] .avatar-t1 { background: #1c2d52; color: #9cbcff; }
+[data-theme="dark"] .avatar-t2 { background: #133523; color: #6ce9a6; }
+[data-theme="dark"] .avatar-t3 { background: #3a2a0d; color: #fdb022; }
+[data-theme="dark"] .avatar-t4 { background: #261f4d; color: #bdb4fe; }
+[data-theme="dark"] .avatar-t5 { background: #3d1a1b; color: #fda29b; }
+[data-theme="dark"] .avatar-t6 { background: #0f2c3d; color: #7cd4fd; }
+
+[data-theme="dark"] .table tbody tr:hover { background: #161e2d; }
+[data-theme="dark"] .alert-info { background: #111c33; border-color: #22396a; color: #c7d8ff; }
+[data-theme="dark"] .alert-success { background: #0d2219; border-color: #1b4a33; color: #b5f2cf; }
+[data-theme="dark"] .alert-warning { background: #261a08; border-color: #4f3510; color: #fde3a7; }
+[data-theme="dark"] .alert-danger { background: #261113; border-color: #552325; color: #fecdca; }
+[data-theme="dark"] .empty-icon { box-shadow: 0 0 0 8px #111a2c; }
+
+/* Charts: single series, steps re-chosen for the dark surface (not an automatic flip) */
+[data-theme="dark"] .chart-gridline { border-top-color: #232c3d; }
+[data-theme="dark"] .chart-bar { background: #2e4f8f; }
+[data-theme="dark"] .chart-col.is-current .chart-bar { background: #5b95f8; }
+[data-theme="dark"] .chart-bar:hover { background: #7aa8fa; }
+[data-theme="dark"] .hbar-fill { background: #4b8af7; }
+
+/* Map */
+[data-theme="dark"] .map { background: #0f1522; }
+[data-theme="dark"] .map-land { fill: #111827; }
+[data-theme="dark"] .map-block { fill: #161f30; }
+[data-theme="dark"] .map-street { stroke: #1b2435; }
+[data-theme="dark"] .map-park { fill: #122a22; }
+[data-theme="dark"] .map-water, [data-theme="dark"] .map-river { fill: #0f2240; stroke: #0f2240; }
+[data-theme="dark"] .map-river { fill: none; }
+[data-theme="dark"] .map-road { stroke: #222c3f; }
+[data-theme="dark"] .map-road-major { stroke: #4a3d1e; }
+[data-theme="dark"] .map-label { fill: #55637b; }
+[data-theme="dark"] .map-pin { background: var(--surface-2); color: var(--text); box-shadow: 0 2px 10px rgba(0, 0, 0, .55), 0 0 0 1px #354157; }
+[data-theme="dark"] .map-pin.is-active { background: var(--primary); color: #fff; }
+[data-theme="dark"] .map-marker .icon { stroke: #0b0f17; }
+[data-theme="dark"] .map-controls, [data-theme="dark"] .map-search-toggle { background: var(--surface-2); }
+[data-theme="dark"] .map-attrib { background: rgba(11, 15, 23, .75); }
+
+[data-theme="dark"] .cal-buffer { background: repeating-linear-gradient(135deg, #2a3446 0 4px, #1a2232 4px 8px); }
+[data-theme="dark"] .cal-free { background: var(--surface); }
+[data-theme="dark"] .cal-personal { background: #f5b83d; color: #2b1a05; }
+[data-theme="dark"] .fav-btn { background: rgba(18, 24, 38, .88); }
+[data-theme="dark"] .fav-btn.is-active { color: #fb7185; }
+[data-theme="dark"] .fav-btn.is-active .icon, [data-theme="dark"] .fav-text.is-active .icon { fill: #fb7185; stroke: #fb7185; }
+
+/* ---------- Layout & pages ---------- */
+[data-theme="dark"] .site-header { background: rgba(11, 15, 23, .82); }
+[data-theme="dark"] .logo-mark { box-shadow: inset 0 -2px 0 rgba(0, 0, 0, .25); }
+[data-theme="dark"] .mobile-nav { background: var(--surface); }
+[data-theme="dark"] .site-footer { background: var(--surface); }
+[data-theme="dark"] .hero, [data-theme="dark"] .section { background: var(--canvas); }
+[data-theme="dark"] .section-muted { background: #0e1320; }
+[data-theme="dark"] .pulse { box-shadow: 0 0 0 4px rgba(18, 183, 106, .25); }
+[data-theme="dark"] .float-card { background: var(--surface-2); border-color: var(--border); }
+[data-theme="dark"] .float-icon, [data-theme="dark"] .success-icon { background: #133523; }
+[data-theme="dark"] .success-icon { box-shadow: 0 0 0 10px #0d2219; }
+[data-theme="dark"] .search-hero { background: var(--surface); }
+[data-theme="dark"] .cat-card:hover { border-color: #2b4a85; }
+[data-theme="dark"] .media-badge { background: rgba(18, 24, 38, .9); }
+[data-theme="dark"] .step { background: var(--surface); }
+[data-theme="dark"] .step-num { color: #1f2a40; }
+[data-theme="dark"] .benefits-stat { background: rgba(18, 24, 38, .94); }
+[data-theme="dark"] .benefit > .icon { background: var(--surface); }
+[data-theme="dark"] .owner-cta { background: #1d4ed8; }
+[data-theme="dark"] .btn-light { --btn-bg: #fff; --btn-fg: #1d4ed8; }
+[data-theme="dark"] .search-summary { background: var(--surface); }
+[data-theme="dark"] .rcard-price, [data-theme="dark"] .loc-foot { background: #0f1522; }
+[data-theme="dark"] .review-bar .bar { background: #252f42; }
+[data-theme="dark"] .detail-page { background: var(--canvas); }
+[data-theme="dark"] .booking-card { background: var(--surface); }
+[data-theme="dark"] .mobile-book { background: var(--surface); box-shadow: 0 -8px 24px -12px rgba(0, 0, 0, .6); }
+[data-theme="dark"] .auth-page { background: radial-gradient(1000px 500px at 50% -10%, #14254a 0%, rgba(20, 37, 74, 0) 70%), var(--canvas); }
+[data-theme="dark"] .side-group, [data-theme="dark"] .side-link .icon { color: #66738a; }
+[data-theme="dark"] .side-link.is-active .icon { color: var(--primary-700); }
+[data-theme="dark"] .dash-top { background: rgba(11, 15, 23, .86); }
+[data-theme="dark"] .dash-search input:focus, [data-theme="dark"] .dash-search kbd { background: var(--surface); }
+[data-theme="dark"] .notif-count { border-color: var(--canvas); }
+[data-theme="dark"] .notif.is-unread { background: #131d31; }
+[data-theme="dark"] .kpi-violet { background: #211b3f; color: #bdb4fe; }
+[data-theme="dark"] .kpi-green { background: #0f2a1d; color: #6ce9a6; }
+[data-theme="dark"] .kpi-amber { background: #2e1f08; color: #fdb022; }
+[data-theme="dark"] .delta.up { background: #0f2a1d; color: #6ce9a6; }
+[data-theme="dark"] .delta.down { background: #2e1415; color: #fda29b; }
+[data-theme="dark"] .today-rented { color: #bdb4fe; } [data-theme="dark"] .today-return, [data-theme="dark"] .today-blocked { color: #fdb022; }
+[data-theme="dark"] .today-available { color: #6ce9a6; } [data-theme="dark"] .today-inactive { color: #66738a; } [data-theme="dark"] .today-pickup { color: #9cbcff; }
+[data-theme="dark"] .gd, [data-theme="dark"] .gcell { border-left-color: #1c2435; }
+[data-theme="dark"] .gd.is-weekend, [data-theme="dark"] .gcell.is-weekend { background: #0f1522; }
+[data-theme="dark"] .gcell.is-today { background: #121d33; box-shadow: inset 1px 0 0 #2b4a85, inset -1px 0 0 #2b4a85; }
+[data-theme="dark"] .loc-type { background: var(--surface-2); }
+[data-theme="dark"] .sg-space-bar { background: #2e4f8f; }
+[data-theme="dark"] .sg-shadow-box { background: var(--surface-2); }
+[data-theme="dark"] .sg-chip { border-color: rgba(255, 255, 255, .08); }
